@@ -15,55 +15,23 @@ namespace PF02
                 Console.WriteLine(CalcularFactorial(5));
             }
 
-            public static long CalcularFactorial(int n)
-            {
+        public static long CalcularFactorial(int n)
+        {
             if (n < 0)
-            {
-                Console.WriteLine("Número negativo, devolviendo -1");
                 return -1;
-            }
 
             if (n == 0)
-            {
-                Console.WriteLine("Factorial de 0 es 1");
                 return 1;
-            }
-
-            if (n == 1)
-            {
-                Console.WriteLine("Factorial de 1 es 1");
-                return 1;
-            }
 
             long factorial = 1;
-            long temp = 1;
-            int contador = 1;
 
-            while (contador <= n)
+            for (int i = 1; i <= n; i++)
             {
-                if (contador % 2 == 0)
-                {
-                    temp = contador; 
-                }
-                else
-                {
-                    temp = contador;
-                }
-
-                factorial = factorial * temp;
-
-                Console.WriteLine($"Multiplicando {temp}, factorial ahora es {factorial}");
-
-                contador++;
-            }
-
-            if (factorial < 0)
-            {
-                factorial = 1; 
+                factorial *= i;
             }
 
             return factorial;
         }
-        
+
     }
 }
